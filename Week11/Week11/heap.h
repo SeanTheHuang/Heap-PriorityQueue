@@ -14,6 +14,8 @@ public:
 	~Heap();
 
 	void insert(int);
+	int getMin();
+	int size();
 	void deleteMin();
 
 	bool isEmpty();

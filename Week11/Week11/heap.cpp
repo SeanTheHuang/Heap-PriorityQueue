@@ -90,7 +90,19 @@ void Heap::deleteMin()
 			}
 		}
 	}
+} //TODO: NEED FIXING, not doing properly
+
+int Heap::getMin()
+{
+	if (!isEmpty()) {
+		return _container[0];
+	}
+	else {
+		return -2147483646;
+	}
 }
+
+int Heap::size() { return _container.size(); }
 
 bool Heap::isEmpty()
 {

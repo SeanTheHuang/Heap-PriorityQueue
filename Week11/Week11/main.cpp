@@ -1,17 +1,19 @@
 #include <iostream>
 
-#include "heap.h"
+#include "PriorityQueue.h"
 
 int main()
 {
-	Heap test;
+	PriorityQueue test;
 
 	for (int i = 10; i >= 1; i--) {
-		test.insert(i);
+		test.push(i);
 	}
 
-	test.deleteMin();
-	test.deleteMin();
+	for (int i = 0; i < 10; i++)
+	{
+		cout << test.pop_front() << " ";
+	}
 
 
 
