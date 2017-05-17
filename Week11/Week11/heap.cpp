@@ -77,16 +77,23 @@ void Heap::deleteMin()
 			}
 		}
 		else {	//Both left and right child exist
-			if (_container[leftChildIndex] < _container[currentIndex]) {	//Decide to go left side
-				swapNodes(currentIndex, leftChildIndex);
-				currentIndex = leftChildIndex;
+			if (_container[leftChildIndex] < _container[rightChildIndex]) {		//Decide to go left side
+				if (_container[leftChildIndex] < _container[currentIndex]) {
+					swapNodes(currentIndex, leftChildIndex);
+					currentIndex = leftChildIndex;
+				}
+				else {
+					break; //Done with swapping nodes
+				}
 			}
-			else if (_container[rightChildIndex] < _container[currentIndex]) {	//Decide to go right side
-				swapNodes(currentIndex, rightChildIndex);
-				currentIndex = rightChildIndex;
-			} 
 			else {
-				break; //Done, correct location
+				if (_container[rightChildIndex] < _container[currentIndex]) {	//Decide to go right side
+					swapNodes(currentIndex, rightChildIndex);
+					currentIndex = rightChildIndex;
+				}
+				else {
+					break; //Done with swapping nodes
+				}
 			}
 		}
 	}
