@@ -97,7 +97,7 @@ void Heap::deleteMin()
 			}
 		}
 	}
-} //TODO: NEED FIXING, not doing properly
+}
 
 int Heap::getMin()
 {
